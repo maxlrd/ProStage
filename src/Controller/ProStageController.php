@@ -20,6 +20,7 @@ class ProStageController extends AbstractController
      */
     public function afficherRessourcePeda()
     {
-        return $this->render('pro_stage/affichageRessource.html.twig');
+        return $this->render('pro_stage/affichageRessource.html.twig',
+        ['idRessource' => 355]);
     }
 }
