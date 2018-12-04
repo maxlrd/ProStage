@@ -24,7 +24,7 @@ class ProStageController extends AbstractController
     }
 
     /**
-     * @Route("/formations", name="prostage_ressource")
+     * @Route("/formations", name="prostage_formations")
      */
     public function formations()
     {
@@ -32,7 +32,7 @@ class ProStageController extends AbstractController
     }
 
     /**
-     * @Route("/stages/{id}", name="prostage_ressource")
+     * @Route("/stages/{id}", name="prostage_stages")
      */
     public function stages($id)
     {
