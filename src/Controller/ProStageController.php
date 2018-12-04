@@ -16,9 +16,25 @@ class ProStageController extends AbstractController
     }
 
     /**
-     * @Route("/ressources/{id}", name="prostage_ressource")
+     * @Route("/entreprise", name="prostage_entreprise")
      */
-    public function afficherRessourcePeda($id)
+    public function entreprise()
+    {
+        return $this->render('pro_stage/entreprise.html.twig');
+    }
+
+    /**
+     * @Route("/formations", name="prostage_ressource")
+     */
+    public function formations()
+    {
+        return $this->render('pro_stage/formations.html.twig');
+    }
+
+    /**
+     * @Route("/stages/{id}", name="prostage_ressource")
+     */
+    public function stages($id)
     {
         return $this->render('pro_stage/affichageRessource.html.twig',
         ['idRessource' => $id]);
