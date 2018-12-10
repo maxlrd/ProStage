@@ -8,17 +8,54 @@
         {% endblock %}
     </head>
     <body>
-        {% block slider %}
-        <h1>--------------SLIDER--------------</h1>
-        {% endblock %}
-        {% block menu %}
-        <h1>--------------MENU--------------</h1>
-        {% endblock %}
-        {% block contenu %}
-        {% endblock %}
-        {% block footer %}
-        <h1>--------------FOOTER--------------</h1>
-        {% endblock %}
+
+    	<div class="container-fluid">
+			{% block slider %} 
+			<div class="row">       
+				<div class="col-md-12">
+					<h1 class="text-center">
+						ProStage
+					</h1>
+				</div>
+			</div>
+			{% endblock %}
+
+			{% block menu %}
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link active" href="{{path('prostage_accueil')}}">Accueil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('prostage_stages', {id:1})}}">Stages</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('prostage_entreprise')}}">Entreprises</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('prostage_formations')}}"">Formations</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			{% endblock %}
+
+			{% block contenu %}
+			<div class="row">
+				<div class="col-md-12">
+				</div>
+			</div>
+			{% endblock %}
+
+			{% block footer %}       
+			<div class="row">
+				<div class="col-md-12">
+					Page crée avec Symfony, par Maxime Larronde.
+				</div>
+			</div>
+			{% endblock %}
+		</div>        
 
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
