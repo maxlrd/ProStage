@@ -4,7 +4,9 @@
 <ul class="list-group">
 	{% for formationCourante in formations %}
 	<li class="list-group-item center">
-		{{formationCourante.nom}}
+		<a class="nav-link disabled" href="{{path('prostage_stageByFormation', {id:formationCourante.id})}}">
+			{{formationCourante.nom}}
+		</a>		
 	</li>
 	{% endfor %}
 </ul>

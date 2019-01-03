@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+<ul class="list-group">
+	{% for stageCourant in formation.stages %}
+	<li class="list-group-item center">
+		{{stageCourant.titre}}
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
