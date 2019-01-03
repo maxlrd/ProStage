@@ -2,21 +2,17 @@
 
 
 {% block contenu %}
-<div class="container">
-	<div class="row">
-		Stage : {{idRessource}}
-		<!--<div class="nav-justified-content-center">
-			Stage : {{idRessource}}
-		</div>-->
-	</div>
-
-	<div class="row">
-		Inter quos Paulus eminebat notarius ortus in Hispania, glabro quidam sub vultu latens, odorandi vias periculorum occultas perquam sagax. is in Brittanniam missus ut militares quosdam perduceret ausos conspirasse Magnentio, cum reniti non possent, iussa licentius supergressus fluminis modo fortunis conplurium sese repentinus infudit et ferebatur per strages multiplices ac ruinas, vinculis membra ingenuorum adfligens et quosdam obterens manicis, crimina scilicet multa consarcinando a veritate longe discreta. unde admissum est facinus impium, quod Constanti tempus nota inusserat sempiterna.
-	</div>
-	<div class="row">
-			<div class="col-md-1 offset-md-11">
-				<button type="button" class="btn btn-primary btn-sm">Contact !</button>
-			</div>
-	</div>
-</div>
+<ul class="list-group">
+	<li class="list-group-item center">
+		{{stage.titre}}
+	</li>
+	<li class="list-group-item"><strong>Descriptif :</strong> {{stage.description}} </li>
+	<li class="list-group-item"><strong>Email :</strong> {{stage.email}} </li>
+	<li class="list-group-item"><strong>Nom de l'entreprise :</strong> {{stage.entreprise.nom}} </li>
+	<li class="list-group-item"><strong>Formation concernée :</strong>
+		{% for formationCourante in stage.formations %}
+			{{ formationCourante.nom }}
+		{% endfor %}
+	</li>
+</ul>
 {% endblock %}

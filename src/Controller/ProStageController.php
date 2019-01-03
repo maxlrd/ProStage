@@ -44,7 +44,13 @@ class ProStageController extends AbstractController
      */
     public function stages($id)
     {
+        //Récupérer le repository de l'entité Stages
+        $repositoryStages = $this->getDoctrine()->getRepository(Stages::class);
+
+        //Récupérer les stages enregistrés en bd
+        $stage = $repositoryStages->find($id);
+        
         return $this->render('pro_stage/stage.html.twig',
-        ['idRessource' => $id]);
+        ['stage' => $stage]);
     }
 }
