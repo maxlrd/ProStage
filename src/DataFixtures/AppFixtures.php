@@ -12,6 +12,8 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+    	$faker = \Faker\Factory::create('fr_FR'); // create a French faker
+
     	/**********************************************
     	***          Création des Formations        ***
     	***********************************************/
@@ -39,6 +41,26 @@ class AppFixtures extends Fixture
         /**********************************************
     	***          Création des Entreprises       ***
     	***********************************************/
+
+    	$nbEntreprises = 10;
+
+    	for ($i=0; $i < $nbEntreprises; $i++) { 
+    		
+    		$entreprise = new Entreprise();
+
+    		//Ajout d'un nom pour l'entreprise via la library faker
+    		$entreprise->setNom($faker->company());
+    		//Ajout d'une adresse pour l'entreprise via la library faker
+    		$entreprise->setAdresse($faker->streetAddress());
+    		//Ajout d'une activitée pour l'entreprise via la library faker
+    		$entreprise->setActivite($faker->jobTitle());
+    		//Ajout d'une ville pour l'entreprise via la library faker
+    		$entreprise->setVille($faker->city());
+    		//Ajout d'une activitée pour l'entreprise via la library faker
+    		$entreprise->setCp((int)$faker->postcode());
+
+    		$manager->persist($entreprise);
+    	}
 
     	/**********************************************
     	***          Création des Stages            ***
