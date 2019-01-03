@@ -4,14 +4,20 @@
 {% block contenu %}
 <ul class="list-group">
 	<li class="list-group-item center">
-		{{stage.titre}}
+		<strong>Stage :</strong> {{stage.titre}}
 	</li>
 	<li class="list-group-item"><strong>Descriptif :</strong> {{stage.description}} </li>
 	<li class="list-group-item"><strong>Email :</strong> {{stage.email}} </li>
-	<li class="list-group-item"><strong>Nom de l'entreprise :</strong> {{stage.entreprise.nom}} </li>
+	<li class="list-group-item"><strong>Nom de l'entreprise :</strong> 
+		<a class="nav-link disabled" href="{{path('prostage_entreprise', {id:stage.entreprise.id})}}">
+			{{stage.entreprise.nom}}
+		</a> 
+	</li>
 	<li class="list-group-item"><strong>Formation concernée :</strong>
 		{% for formationCourante in stage.formations %}
-			{{ formationCourante.nom }}
+			<a class="nav-link disabled" href="{{path('prostage_formations', {id:formationCourante.id})}}">
+				{{ formationCourante.nom }}
+			</a>
 			{% if loop.last == false %}
 			,
 			{% endif %}

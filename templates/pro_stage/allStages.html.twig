@@ -2,10 +2,10 @@
 
 {% block contenu %}
 <ul class="list-group">
-	{% for stagesCourant in stages %}
+	{% for stageCourant in stages %}
 	<li class="list-group-item center">
-		<a class="nav-link disabled" href="{{path('prostage_stages', {id:stagesCourant.id})}}">
-			{{stagesCourant.titre}}
+		<a class="nav-link disabled" href="{{path('prostage_stages', {id:stageCourant.id})}}">
+			{{stageCourant.titre}}
 		</a>
 	</li>
 	{% endfor %}
