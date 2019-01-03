@@ -12,6 +12,9 @@
 	<li class="list-group-item"><strong>Formation concernée :</strong>
 		{% for formationCourante in stage.formations %}
 			{{ formationCourante.nom }}
+			{% if loop.last == false %}
+			,
+			{% endif %}
 		{% endfor %}
 	</li>
 </ul>

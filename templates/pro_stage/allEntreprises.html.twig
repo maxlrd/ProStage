@@ -4,7 +4,9 @@
 <ul class="list-group">
 	{% for entrepriseCourante in entreprises %}
 	<li class="list-group-item center">
-		{{entrepriseCourante.nom}}
+		<a class="nav-link disabled" href="{{path('prostage_entreprise', {id:entrepriseCourante.id})}}">
+			{{entrepriseCourante.nom}}
+		</a>
 	</li>
 	{% endfor %}
 </ul>

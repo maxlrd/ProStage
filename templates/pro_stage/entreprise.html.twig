@@ -9,5 +9,13 @@
 	<li class="list-group-item"><strong>Activitée :</strong> {{entreprise.activite}} </li>
 	<li class="list-group-item"><strong>Ville :</strong> {{entreprise.ville}} </li>
 	<li class="list-group-item"><strong>Code Postal :</strong>{{entreprise.cp}} </li>
+	<li class="list-group-item"><strong>Stages proposés :</strong>
+		{% for stageCourant in entreprise.stages %}
+			{{ stageCourant.titre }}
+			{% if loop.last == false %}
+				</br>
+			{% endif %}
+		{% endfor %}
+	</li>
 </ul>
 {% endblock %}

@@ -4,7 +4,9 @@
 <ul class="list-group">
 	{% for stagesCourant in stages %}
 	<li class="list-group-item center">
-		{{stagesCourant.titre}}
+		<a class="nav-link disabled" href="{{path('prostage_stages', {id:stagesCourant.id})}}">
+			{{stagesCourant.titre}}
+		</a>
 	</li>
 	{% endfor %}
 </ul>
