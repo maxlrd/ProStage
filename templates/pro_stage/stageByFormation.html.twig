@@ -2,6 +2,8 @@
 
 {% block contenu %}
 <ul class="list-group">
+	<strong>{{formation.nom}} :</strong>
+	</br> 
 	{% for stageCourant in formation.stages %}
 	<li class="list-group-item center">
 		<a class="nav-link disabled" href="{{path('prostage_stages', {id:stageCourant.id})}}">
