@@ -2,9 +2,9 @@
 
 {% block contenu %}
 <ul class="list-group">
-	{% for formationCourante in formations %}
+	{% for stagesCourant in stages %}
 	<li class="list-group-item center">
-		{{formationCourante.nom}}
+		{{stagesCourant.titre}}
 	</li>
 	{% endfor %}
 </ul>
