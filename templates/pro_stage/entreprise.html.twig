@@ -3,15 +3,17 @@
 {% block contenu %}
 <ul class="list-group">
 	<li class="list-group-item center">
-		{{entreprise.nom}}
+		<strong>Entreprise :</strong> {{entreprise.nom}}
 	</li>
 	<li class="list-group-item"><strong>Adresse :</strong> {{entreprise.adresse}} </li>
 	<li class="list-group-item"><strong>Activitée :</strong> {{entreprise.activite}} </li>
 	<li class="list-group-item"><strong>Ville :</strong> {{entreprise.ville}} </li>
-	<li class="list-group-item"><strong>Code Postal :</strong>{{entreprise.cp}} </li>
+	<li class="list-group-item"><strong>Code Postal :</strong> {{entreprise.cp}} </li>
 	<li class="list-group-item"><strong>Stages proposés :</strong>
 		{% for stageCourant in entreprise.stages %}
-			{{ stageCourant.titre }}
+			<a class="nav-link disabled" href="{{path('prostage_stages', {id:stageCourant.id})}}">
+				{{ stageCourant.titre }}
+			</a>
 			{% if loop.last == false %}
 				</br>
 			{% endif %}
