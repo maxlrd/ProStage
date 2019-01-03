@@ -1,14 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block contenu %}
-<div class="container">
-	<div class="row">
-		Axiome-Solution
-		<hr />
-	</div>
-	<div class="row">
-		Geomatika
-		<hr />
-	</div>
-</div>
+<ul class="list-group">
+	<li class="list-group-item center">
+		{{entreprise.nom}}
+	</li>
+	<li class="list-group-item"><strong>Adresse :</strong> {{entreprise.adresse}} </li>
+	<li class="list-group-item"><strong>Activitée :</strong> {{entreprise.activite}} </li>
+	<li class="list-group-item"><strong>Ville :</strong> {{entreprise.ville}} </li>
+	<li class="list-group-item"><strong>Code Postal :</strong>{{entreprise.cp}} </li>
+</ul>
 {% endblock %}

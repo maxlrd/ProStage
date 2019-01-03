@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Stages;
+use App\Entity\Entreprise;
 
 class ProStageController extends AbstractController
 {
@@ -24,11 +25,17 @@ class ProStageController extends AbstractController
     }
 
     /**
-     * @Route("/entreprise", name="prostage_entreprise")
+     * @Route("/entreprise/{id}", name="prostage_entreprise")
      */
-    public function entreprise()
+    public function entreprise($id)
     {
-        return $this->render('pro_stage/entreprise.html.twig');
+        //Récupérer le repository de l'entité Entreprise
+        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
+
+        //Récupérer les entreprises enregistrés en bd par id
+        $entreprise = $repositoryEntreprise->find($id);
+
+        return $this->render('pro_stage/entreprise.html.twig', ['entreprise' => $entreprise]);
     }
 
     /**
@@ -47,7 +54,7 @@ class ProStageController extends AbstractController
         //Récupérer le repository de l'entité Stages
         $repositoryStages = $this->getDoctrine()->getRepository(Stages::class);
 
-        //Récupérer les stages enregistrés en bd
+        //Récupérer les stages enregistrés en bd par id
         $stage = $repositoryStages->find($id);
         
         return $this->render('pro_stage/stage.html.twig',
